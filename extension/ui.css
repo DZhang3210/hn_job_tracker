@@ -1,0 +1,23 @@
+:root {
+  color-scheme: light dark;
+  --fg: #18181b; --muted: #71717a; --bg: #fff; --panel: #fafafa; --line: #e4e4e7;
+  --green-bg: #d1fae5; --green-fg: #065f46; --grey-bg: #e4e4e7; --grey-fg: #52525b;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #f4f4f5; --muted: #a1a1aa; --bg: #18181b; --panel: #09090b; --line: #3f3f46;
+    --green-bg: #064e3b; --green-fg: #a7f3d0; --grey-bg: #3f3f46; --grey-fg: #d4d4d8;
+  }
+}
+body { margin: 0; font: 13px/1.45 system-ui, sans-serif; color: var(--fg); background: var(--bg); }
+a { color: inherit; }
+.muted { color: var(--muted); }
+.btn {
+  font: inherit; padding: 4px 10px; border: 1px solid var(--muted); border-radius: 5px;
+  background: transparent; color: inherit; cursor: pointer;
+}
+.btn:hover { background: var(--line); }
+.btn.primary { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+.chip { display: inline-block; padding: 1px 6px; border-radius: 4px; font-size: 12px; font-weight: 500; white-space: nowrap; }
+.chip.applied { background: var(--green-bg); color: var(--green-fg); }
+.chip.hidden { background: var(--grey-bg); color: var(--grey-fg); }

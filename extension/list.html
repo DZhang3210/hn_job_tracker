@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HN Job Marks</title>
+  <link rel="stylesheet" href="ui.css" />
+  <style>
+    main { max-width: 960px; margin: 0 auto; padding: 20px 16px; }
+    h1 { font-size: 18px; margin: 0 0 12px; }
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 12px; }
+    .controls input[type=search] { flex: 1 1 220px; min-width: 0; font: inherit; padding: 5px 8px; border: 1px solid var(--line); border-radius: 5px; background: var(--bg); color: inherit; }
+    .tabs { display: inline-flex; border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+    .tabs button { font: inherit; padding: 5px 10px; border: 0; background: transparent; color: inherit; cursor: pointer; }
+    .tabs button[aria-pressed=true] { background: var(--fg); color: var(--bg); }
+    ul { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 8px; }
+    li { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 4px 10px; align-items: center; padding: 8px 10px; border-top: 1px solid var(--line); }
+    li:first-child { border-top: 0; }
+    .what { min-width: 0; }
+    .what .co { font-weight: 600; }
+    .what .pv { color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .acts { display: flex; gap: 6px; }
+    .empty { padding: 24px; text-align: center; color: var(--muted); }
+    @media (max-width: 560px) {
+      li { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>HN Job Marks</h1>
+    <div class="controls">
+      <div class="tabs" id="tabs"></div>
+      <input id="q" type="search" placeholder="Search company or post" />
+      <button class="btn primary" id="copy">Copy for Job Marks page</button>
+      <button class="btn" id="export">Export backup</button>
+      <label class="btn" for="import">Import backup</label>
+      <input id="import" type="file" accept="application/json,.json" hidden />
+    </div>
+    <ul id="list"></ul>
+    <p class="muted">Marks are stored in this browser profile. Export a backup now and then; removing the extension deletes them.</p>
+  </main>
+  <script src="marks.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>

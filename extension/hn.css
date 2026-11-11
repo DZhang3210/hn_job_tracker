@@ -1,0 +1,49 @@
+.jm-gone { display: none !important; }
+
+.jm-toolbar {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; flex-direction: column; gap: 4px;
+  margin: 6px 0 10px; padding: 6px 8px;
+  background: #fff; border: 1px solid #d4d4d8; border-radius: 6px;
+  font: 12px/1.4 system-ui, sans-serif; color: #18181b;
+}
+.jm-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; }
+.jm-input {
+  flex: 1 1 200px; min-width: 0; font: inherit; padding: 3px 6px;
+  border: 1px solid #d4d4d8; border-radius: 4px; background: #fff; color: #18181b;
+}
+.jm-tally { font-weight: 600; }
+.jm-muted { color: #71717a; }
+.jm-check { display: inline-flex; align-items: center; gap: 3px; cursor: pointer; }
+.jm-notice { color: #2563eb; }
+.jm-notice.jm-warn { color: #b91c1c; font-weight: 600; }
+
+.jm-bar {
+  display: flex; flex-wrap: wrap; align-items: center; gap: 5px;
+  /* HN's author line has margin-bottom: -10px; offset it so the bar doesn't overlap */
+  margin: 14px 0 6px; font: 11px/1.4 system-ui, sans-serif;
+}
+.jm-chip {
+  display: inline-block; padding: 1px 6px; border-radius: 4px; font-weight: 500;
+  background: #e4e4e7; color: #3f3f46;
+}
+.jm-applied { background: #d1fae5; color: #065f46; }
+.jm-passed { background: #e4e4e7; color: #52525b; }
+.jm-history { background: transparent; border: 1px dashed currentColor; }
+.jm-headline { color: #52525b; max-width: 70ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+.jm-btn {
+  font: inherit; padding: 2px 9px; border: 1px solid #a1a1aa; border-radius: 4px;
+  background: #fff; color: #18181b; cursor: pointer;
+}
+.jm-btn:hover:not(:disabled) { background: #f4f4f5; }
+.jm-btn:disabled { opacity: .5; cursor: default; }
+.jm-small { padding: 0 6px; }
+.jm-apply { border-color: #059669; color: #065f46; }
+.jm-apply:hover { background: #ecfdf5 !important; }
+.jm-primary { background: #18181b; color: #fff; border-color: #18181b; }
+.jm-primary:hover:not(:disabled) { background: #3f3f46; }
+
+/* Keyboard focus: the post a / x act on */
+tr.jm-focus > td > table { outline: 2px solid #f97316; outline-offset: 2px; border-radius: 2px; }
+tr.jm-marked .comhead { opacity: .6; }

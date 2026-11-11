@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "HN Job Marks",
+  "version": "0.2.0",
+  "description": "Mark HN Who's Hiring posts as Applied or Not interested, hide what you've passed on, and keep a running tally.",
+  "permissions": ["storage"],
+  "action": { "default_popup": "popup.html", "default_title": "HN Job Marks" },
+  "content_scripts": [
+    {
+      "matches": ["https://news.ycombinator.com/item*"],
+      "js": ["marks.js", "hn.js"],
+      "css": ["hn.css"]
+    }
+  ]
+}

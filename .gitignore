@@ -1,0 +1,5 @@
+# Local Claude Code settings
+.claude/settings.local.json
+
+# Exported mark backups
+hn-job-marks-*.json
